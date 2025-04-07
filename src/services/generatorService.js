@@ -17,7 +17,9 @@ export const generateCharacter = async (prompt, contextData) => {
         headers: {
           Authorization: `Bearer ${key}`,
           'Content-Type': 'application/json',
+          "HTTP-Referer": "https://sethukumar1709.github.io/toon-tailor"
         },
+
         body: JSON.stringify({
           model: 'deepseek/deepseek-r1:free',
           messages: [
@@ -40,31 +42,31 @@ export const generateCharacter = async (prompt, contextData) => {
 
     const data1 = await response.json();
 
-		const data = data1.choices?.[0]?.message?.content || 'No response received.';
+    const data = data1.choices?.[0]?.message?.content || 'No response received.';
     console.log(data);
     // Parse the character data if it's returned as a string
-    if(data==="No response received.") {
-    return data;
+    if (data === "No response received.") {
+      return data;
     }
     let characterData;
-try {
-  if (typeof data === 'string') {
-    // Remove Markdown-style code block
-    const cleanedData = data.replace(/```json|```/g, '').trim();
-    console.log("Cleaned Data:", cleanedData);
+    try {
+      if (typeof data === 'string') {
+        // Remove Markdown-style code block
+        const cleanedData = data.replace(/```json|```/g, '').trim();
+        console.log("Cleaned Data:", cleanedData);
 
-    characterData = JSON.parse(cleanedData);
-  } else if (typeof data === 'object') {
-    characterData = data;
-  } else {
-    throw new Error('Unexpected data format');
-  }
-} catch (e) {
-  console.error("Error parsing character data:", e);
-  throw new Error('Invalid character data received');
-}
+        characterData = JSON.parse(cleanedData);
+      } else if (typeof data === 'object') {
+        characterData = data;
+      } else {
+        throw new Error('Unexpected data format');
+      }
+    } catch (e) {
+      console.error("Error parsing character data:", e);
+      throw new Error('Invalid character data received');
+    }
 
-    
+
     return characterData;
   } catch (error) {
     console.error('Error in generateCharacter:', error);
