@@ -158,7 +158,7 @@ function App() {
               }}
               className="text-gray-600 hover:text-gray-800"
             >
-              Back to My Characters
+              Edit Generated Character
             </button>
           </div>
         </div>

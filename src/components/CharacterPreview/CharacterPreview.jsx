@@ -167,12 +167,24 @@ const CharacterPreview = ({ character }) => {
 
                 </div>
 
-                {character.equipment.hat ?
+                {character.equipment.hat && character.equipment.hair==="Curlylong" ?
+                <>
+                <div className="absolute top-0">
+                      <img src={`/assets/avatars/hairstyles/${character.appearance.hairColor.toLowerCase()}${character.equipment.hair.toLowerCase()}.svg`}
+                        alt='Hairstyle' fill="#CE5986" className="transition-all h-[414px] w-[250px]" />
+                    </div>
                   <div className="absolute top-0">
                     <img src={`/assets/avatars/hats/${character.equipment.hat.toLowerCase()}.svg`}
                       alt="Hat" className="transition-all h-[414px] w-[250px]" />
-
                   </div>
+                  </>
+                  : character.equipment.hat ?
+                  <div className="absolute top-0">
+                  <img src={`/assets/avatars/hats/${character.equipment.hat.toLowerCase()}.svg`}
+                    alt="Hat" className="transition-all h-[414px] w-[250px]" />
+
+                </div>
+
                   :
                   character.equipment.hair ?
                     <div className="absolute top-0">
