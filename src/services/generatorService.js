@@ -8,7 +8,6 @@
  * @returns {Promise<Object>} Generated character data
  */
 const key=process.env.REACT_APP_OPENAI_API_KEY;
-console.log("Key:",key);
 export const generateCharacter = async (prompt, contextData) => {
   try {
     const response = await fetch(
