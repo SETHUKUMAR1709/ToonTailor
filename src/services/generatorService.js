@@ -1,13 +1,5 @@
-// src/services/generatorService.js
+const key = process.env.REACT_APP_OPENAI_API_KEY;
 
-/**
- * Send a character generation request to the GPT-4o API
- * 
- * @param {String} prompt - User's character description
- * @param {Object} contextData - Data from constants to help guide the AI
- * @returns {Promise<Object>} Generated character data
- */
-const key=process.env.REACT_APP_OPENAI_API_KEY;
 export const generateCharacter = async (prompt, contextData) => {
   try {
     const response = await fetch(
@@ -29,42 +21,40 @@ export const generateCharacter = async (prompt, contextData) => {
               role: 'user',
               content: prompt,
             },
-          ]
+          ],
         }),
-      },
+      }
     );
+
     if (!response.ok) {
-      const errorData = await response.choices[0].message.content.json();
-      throw new Error(errorData.error || 'Failed to generate character');
+      const errorText = await response.text();
+      throw new Error(`API error: ${response.status} - ${errorText}`);
     }
 
     const data1 = await response.json();
-
-		const data = data1.choices?.[0]?.message?.content || 'No response received.';
+    const data = data1.choices?.[0]?.message?.content || 'No response received.';
     console.log(data);
-    // Parse the character data if it's returned as a string
-    if(data==="No response received.") {
-    return data;
+
+    if (data === 'No response received.') {
+      return data;
     }
+
     let characterData;
-try {
-  if (typeof data === 'string') {
-    // Remove Markdown-style code block
-    const cleanedData = data.replace(/```json|```/g, '').trim();
-    console.log("Cleaned Data:", cleanedData);
+    try {
+      if (typeof data === 'string') {
+        const cleanedData = data.replace(/```json|```/g, '').trim();
+        console.log("Cleaned Data:", cleanedData);
+        characterData = JSON.parse(cleanedData);
+      } else if (typeof data === 'object') {
+        characterData = data;
+      } else {
+        throw new Error('Unexpected data format');
+      }
+    } catch (e) {
+      console.error("Error parsing character data:", e);
+      throw new Error('Invalid character data received');
+    }
 
-    characterData = JSON.parse(cleanedData);
-  } else if (typeof data === 'object') {
-    characterData = data;
-  } else {
-    throw new Error('Unexpected data format');
-  }
-} catch (e) {
-  console.error("Error parsing character data:", e);
-  throw new Error('Invalid character data received');
-}
-
-    
     return characterData;
   } catch (error) {
     console.error('Error in generateCharacter:', error);
