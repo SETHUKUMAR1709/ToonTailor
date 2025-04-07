@@ -15,7 +15,7 @@ export const generateCharacter = async (prompt, contextData) => {
       {
         method: 'POST',
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
