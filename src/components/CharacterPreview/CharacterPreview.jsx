@@ -13,7 +13,7 @@ const CharacterPreview = ({ character }) => {
               <div>
                 {character.equipment.bag &&
                   <div className="absolute top-0">
-                    <img src={`/assets/avatars/backpacks/${character.equipment.bag.toLowerCase()}.svg`} class="transition-all" alt="backpack" className="height-[414px] width-[250px]" />
+                    <img src={`${process.env.PUBLIC_URL}/assets/avatars/backpacks/${character.equipment.bag.toLowerCase()}.svg`} class="transition-all" alt="backpack" className="height-[414px] width-[250px]" />
                   </div>
                 }
                 <div className="absolute top-0">
@@ -170,17 +170,17 @@ const CharacterPreview = ({ character }) => {
                 {character.equipment.hat && character.equipment.hair==="Curlylong" ?
                 <>
                 <div className="absolute top-0">
-                      <img src={`/assets/avatars/hairstyles/${character.appearance.hairColor.toLowerCase()}${character.equipment.hair.toLowerCase()}.svg`}
+                      <img src={`${process.env.PUBLIC_URL}/assets/avatars/hairstyles/${character.appearance.hairColor.toLowerCase()}${character.equipment.hair.toLowerCase()}.svg`}
                         alt='Hairstyle' fill="#CE5986" className="transition-all h-[414px] w-[250px]" />
                     </div>
                   <div className="absolute top-0">
-                    <img src={`/assets/avatars/hats/${character.equipment.hat.toLowerCase()}.svg`}
+                    <img src={`${process.env.PUBLIC_URL}/assets/avatars/hats/${character.equipment.hat.toLowerCase()}.svg`}
                       alt="Hat" className="transition-all h-[414px] w-[250px]" />
                   </div>
                   </>
                   : character.equipment.hat ?
                   <div className="absolute top-0">
-                  <img src={`/assets/avatars/hats/${character.equipment.hat.toLowerCase()}.svg`}
+                  <img src={`${process.env.PUBLIC_URL}/assets/avatars/hats/${character.equipment.hat.toLowerCase()}.svg`}
                     alt="Hat" className="transition-all h-[414px] w-[250px]" />
 
                 </div>
@@ -188,7 +188,7 @@ const CharacterPreview = ({ character }) => {
                   :
                   character.equipment.hair ?
                     <div className="absolute top-0">
-                      <img src={`/assets/avatars/hairstyles/${character.appearance.hairColor.toLowerCase()}${character.equipment.hair.toLowerCase()}.svg`}
+                      <img src={`${process.env.PUBLIC_URL}/assets/avatars/hairstyles/${character.appearance.hairColor.toLowerCase()}${character.equipment.hair.toLowerCase()}.svg`}
                         alt='Hairstyle' fill="#CE5986" className="transition-all h-[414px] w-[250px]" />
                     </div>
                     : null}
@@ -225,24 +225,24 @@ const CharacterPreview = ({ character }) => {
 
                 {character.equipment.foot &&
                   <div className="absolute top-0">
-                    <img src={`/assets/avatars/footwears/${character.equipment.foot.toLowerCase()}.svg`}
+                    <img src={`${process.env.PUBLIC_URL}/assets/avatars/footwears/${character.equipment.foot.toLowerCase()}.svg`}
                       alt="footwear" className="transition-all h-[414px] w-[250px]" />
                   </div>}
 
 
                 {character.equipment.pant &&
                   <div className="absolute top-0">
-                    <img src={`/assets/avatars/bottomwears/${character.equipment.pant.toLowerCase()}.svg`}
+                    <img src={`${process.env.PUBLIC_URL}/assets/avatars/bottomwears/${character.equipment.pant.toLowerCase()}.svg`}
                       alt="bottomwear" className="transition-all h-[414px] w-[250px]" />
                   </div>}
                 {character.equipment.top &&
                   <div className="absolute top-0">
-                    <img src={`/assets/avatars/topwears/${character.equipment.top.toLowerCase()}.svg`}
+                    <img src={`${process.env.PUBLIC_URL}/assets/avatars/topwears/${character.equipment.top.toLowerCase()}.svg`}
                       alt="topwear" className="transition-all h-[414px] w-[250px]" />
                   </div>}
                 {character.equipment.accessory &&
                   <div className="absolute top-0">
-                    <img src={`/assets/avatars/accessories/${character.equipment.accessory.toLowerCase()}.svg`}
+                    <img src={`${process.env.PUBLIC_URL}/assets/avatars/accessories/${character.equipment.accessory.toLowerCase()}.svg`}
                       alt="accessory" className="transition-all h-[414px] w-[250px]" />
                   </div>}
 
