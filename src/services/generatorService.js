@@ -7,7 +7,8 @@
  * @param {Object} contextData - Data from constants to help guide the AI
  * @returns {Promise<Object>} Generated character data
  */
-
+const key=process.env.REACT_APP_OPENAI_API_KEY;
+console.log("Key:",key);
 export const generateCharacter = async (prompt, contextData) => {
   try {
     const response = await fetch(
@@ -15,7 +16,7 @@ export const generateCharacter = async (prompt, contextData) => {
       {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer ${key}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
