@@ -17,7 +17,6 @@ export const generateCharacter = async (prompt, contextData) => {
         headers: {
           Authorization: `Bearer ${key}`,
           'Content-Type': 'application/json',
-          "HTTP-Referer": "https://sethukumar1709.github.io/toon-tailor"
         },
 
         body: JSON.stringify({
