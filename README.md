@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# Toon-Tailor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**A Game Character Creator – Bringing Inclusive, Fun, and Personalized Avatars to Life**
 
-## Available Scripts
+[![GitHub issues](https://img.shields.io/github/issues/SETHUKUMAR1709/toon-tailor)](https://github.com/SETHUKUMAR1709/toon-tailor/issues)
+[![License](https://img.shields.io/github/license/SETHUKUMAR1709/toon-tailor)](LICENSE)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+**Toon-Tailor** is a creative and inclusive application that lets users design and customize their game characters easily. Built with a focus on diversity, representation, and accessibility, Toon-Tailor empowers users to create avatars that resonate with their personal identity—whether for games, social platforms, or personal branding.  
+The project is the result of a collaborative effort by the Toon Team: Peeyush Maurya, Sethukumar, Moorthy, and Harsh Chaudhary, under the auspices of Sufanpreet Kaur at Lovely Professional University, Punjab.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Demo Examples](#demo-examples)
+- [AI Chatbot Integration](#ai-chatbot-integration)
+- [Installation and Setup](#installation-and-setup)
+- [Usage](#usage)
+- [Further Applications](#further-applications)
+- [Contributing](#contributing)
+- [License](#license)
+- [Feedback](#feedback)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Inclusive Character Customization:**  
+  - Choose from a wide range of races and backgrounds such as Elves, Dwarfs, Humans, Halflings, and Orcs.
+  - Select gender options including male, female, and neutral to promote diverse identities.  
+- **Fun and Accessible UI:**  
+  - A playful design using modern UI elements powered by Tailwind CSS.
+  - Use of SVG editors for crafting unique avatars and assets.
+- **Local Save:**  
+  - Save your created characters using LocalStorage for easy access and later modifications.
+- **AI-Driven Chatbot:**  
+  - Leverage the DeepSeek R1 API to guide users through natural language conversation.
+  - Quickly update avatars with simple text prompts such as “Give my character purple eyes and a jacket.”
+  - The chatbot brings creativity, advanced reasoning, and dynamic interaction to the customization process.
+- **Broad Use Cases:**  
+  - Quick prototyping and exporting of character designs for role-playing games, story-based projects, and metaverse initiatives.
+  - Supports educational tools, especially for neurodivergent or dyslexic students who benefit from interactive, personalized learning environments.
+  
+## Tech Stack
 
-### `npm run build`
+- **Frontend:**  
+  - [React.js](https://reactjs.org/) – Provides a dynamic and responsive user interface.
+  - [Tailwind CSS](https://tailwindcss.com/) – Ensures a modern and utility-first styling framework.
+- **Asset Management:**  
+  - SVG Editors – For creating, editing, and integrating character assets.
+- **Data Storage:**  
+  - LocalStorage – Enables users to locally save their character customizations.
+- **AI Chatbot:**  
+  - DeepSeek R1 API – Integrates an AI assistant to interpret user instructions and customize avatars in real time.
+- **Version Control & Deployment:**  
+  - GitHub – Used for code hosting, versioning, and deployment processes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo Examples
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Toon-Tailor features a few standout character prototypes, including:
+- **FounTheodus Brightshield:**  
+  A righteous human cleric devoted to healing and protection.
+- **Grakar Softpaw:**  
+  A battle-scarred orc warrior with a soft spot for small animals.
+- **Sylvaris Moonwhisper:**  
+  A nimble elf rogue with a mischievous streak and a mysterious past.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each character design exemplifies the application's commitment to creating inclusive and relatable avatars.
 
-### `npm run eject`
+## AI Chatbot Integration
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The built-in AI Chatbot transforms the character creation process:
+- **Natural Language Interaction:**  
+  Users simply type prompts in plain language to update their avatar’s features, eliminating the need for manual adjustments.
+- **Instant Visual Feedback:**  
+  The chatbot uses the DeepSeek R1 API to process and apply changes on the fly, creating an intuitive and engaging experience.
+- **Enhanced Creativity:**  
+  Beyond direct commands, the chatbot can suggest creative enhancements, making the overall experience more interactive and fun.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow these steps to get started:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the Repository:**
 
-## Learn More
+   ```bash
+   git clone https://github.com/Peeyush-04/toon-tailor.git
+   cd toon-tailor
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Install Dependencies:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   Ensure you have [Node.js](https://nodejs.org/) installed, then run:
 
-### Code Splitting
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Run the Application:**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Build for Production:**
 
-### Making a Progressive Web App
+   To create an optimized build, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   npm run build
+   ```
 
-### Advanced Configuration
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **User Interface:**  
+  Use the interactive UI to choose character attributes such as race, gender, and style.
+- **Chatbot Support:**  
+  Enter descriptive prompts in the chat interface to personalize your avatar in real time.
+- **Saving Your Work:**  
+  Characters are saved in the browser’s local storage, ensuring you can revisit and adjust your designs at any time.
+- **Export Options:**  
+  Export or share your designs for further use in game development, social platforms, or digital storytelling.
 
-### Deployment
+## Further Applications
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Toon-Tailor is more than just a game character creator:
+- **Game Development:**  
+  Quickly prototype characters for role-playing and adventure games.
+- **Educational Tools:**  
+  Create interactive learning environments that are accessible to neurodivergent and dyslexic students.
+- **Virtual Identities:**  
+  Develop personal branding materials or avatars for social media and virtual environments.
+- **Metaverse Projects:**  
+  Serve as a foundational tool for designing unique digital identities in virtual worlds.
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions to Toon-Tailor are welcome! Here’s how you can help:
+
+1. **Fork the repository.**
+2. **Create a new branch** for your feature or bugfix.
+3. **Commit your changes** with clear, concise messages.
+4. **Submit a pull request** describing your improvements.
+
+For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Feedback
+
+We value your suggestions and feedback. Please feel free to open an issue or contact us directly with your ideas for making Toon-Tailor even better.
